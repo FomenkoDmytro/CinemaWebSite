@@ -1,0 +1,13 @@
+@use "./_variables.scss" as *;
+
+.text-primary-blue {
+  color: var(--color-primary-blue);
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-black {
+  font-weight: 900;
+}

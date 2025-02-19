@@ -1,21 +1,21 @@
 import AdventagesSection from "./AdventagesSection";
 import HeroSection from "./HeroSection";
 import OurCimenasSection from "./OurCinemasSection";
-import SubscribeSection from "./SubscribeSection";
+import LocationSection from "./LocationSection";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-function Home() {
+function About() {
   return (
     <div>
       <Header />
       <HeroSection />
       <AdventagesSection />
       <OurCimenasSection />
-      <SubscribeSection />
+      <LocationSection />
       <Footer />
     </div>
   );
 }
 
-export default Home;
+export default About;
