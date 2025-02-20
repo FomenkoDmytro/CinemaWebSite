@@ -9,10 +9,12 @@ function About() {
   return (
     <div>
       <Header />
-      <HeroSection />
-      <AdventagesSection />
-      <OurCimenasSection />
-      <LocationSection />
+      <main>
+        <HeroSection />
+        <AdventagesSection />
+        <OurCimenasSection />
+        <LocationSection />
+      </main>
       <Footer />
     </div>
   );

@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.adventagesList > * {
+  min-width: calc((100% - 60px) / 4);
+}
+
 .adventagesContainer {
   display: flex;
   flex-direction: column;
