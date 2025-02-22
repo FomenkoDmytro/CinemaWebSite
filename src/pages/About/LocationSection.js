@@ -6,7 +6,8 @@ function LocationSection() {
       <div className="container">
         <div className={styles.locationContainer}>
           <h2>
-            Як нас <span className="text-primary-blue">знайти</span>
+            Як нас{" "}
+            <span className="text-primary-blue text-extraBold">знайти</span>
           </h2>
           <p>
             EpicVision розташований у самому серці Києва, на вулиці Хрещатик,

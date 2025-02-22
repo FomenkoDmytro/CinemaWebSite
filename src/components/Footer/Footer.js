@@ -1,16 +1,102 @@
+import { useNavigate } from "react-router-dom";
+import Icon from "../Icon/Icon";
+import styles from "./Footer.module.scss";
+
 function Footer() {
+  const navigate = useNavigate();
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
-    <footer>
-      <div>company name &copy; 2025. All rights reserved. </div>
-      <div>
-        <ul>
-          <li>Terms</li>
-          <li>Privacy</li>
-          <li>Support</li>
-          <li>About</li>
-          <li>Resources</li>
-          <li>Contact</li>
-        </ul>
+    <footer className={styles.footer}>
+      <div className="container">
+        <div className={styles.footerContainer}>
+          <nav className={styles.nav}>
+            <div className={styles.logo}>
+              <span onClick={() => handleNavigate("/")}>
+                <img
+                  src={require("../../assets/images/logo.png")}
+                  alt="Логотип кінотеатру"
+                />
+              </span>
+            </div>
+            <ul className={styles.menu}>
+              <li className={styles.link} onClick={() => handleNavigate("/")}>
+                Terms
+              </li>
+              <li className={styles.link} onClick={() => handleNavigate("/")}>
+                Privacy
+              </li>
+              <li className={styles.link} onClick={() => handleNavigate("/")}>
+                Support
+              </li>
+              <li className={styles.link} onClick={() => handleNavigate("/")}>
+                About
+              </li>
+              <li className={styles.link} onClick={() => handleNavigate("/")}>
+                Resources
+              </li>
+              <li className={styles.link} onClick={() => handleNavigate("/")}>
+                Contact
+              </li>
+            </ul>
+          </nav>
+          <address className={styles.address}>
+            <div className={styles.addressContacts}>
+              <ul className={styles.addressList}>
+                <li>
+                  <a className={`${styles.link} link`} href="tel:+380951234567">
+                    +38 (095) 123-45-67
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={`${styles.link} link`}
+                    href="mailto:epicvision@gmail.com"
+                  >
+                    EpicVision@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className={`${styles.link} link`}
+                    href="https://maps.app.goo.gl/zUkGo392BeuX52wy8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Україна, м. Київ, вул. Хрещатик 25
+                  </a>
+                </li>
+              </ul>
+              <div className={styles.icon}>
+                <a href="#">
+                  <Icon
+                    icon="icon-facebook"
+                    className={styles.addressIcon}
+                    w="42"
+                    h="42"
+                  />
+                </a>
+                <a href="#">
+                  <Icon
+                    icon="icon-instagram"
+                    className={styles.addressIcon}
+                    w="42"
+                    h="42"
+                  />
+                </a>
+              </div>
+            </div>
+            <div className={styles.copyrightTerms}>
+              <p className={styles.link} onClick={() => handleNavigate("/")}>
+                Політика....
+              </p>
+              <p className={styles.copyright}>&copy; 2025. Дані захищені.</p>
+            </div>
+          </address>
+        </div>
       </div>
     </footer>
   );

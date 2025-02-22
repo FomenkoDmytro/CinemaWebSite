@@ -1,0 +1,88 @@
+@import "../../styles/_variables.scss";
+
+.footer {
+  background-color: var(--color-primary-blue-dark);
+  color: var(--color-secondary-white);
+  padding: 56px 0;
+  font-size: 16px;
+}
+
+.footerContainer {
+  display: flex;
+  gap: 30px;
+}
+
+.nav,
+address {
+  display: flex;
+  flex-basis: 50%;
+
+  gap: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.menu {
+}
+
+.icon {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.addressContacnts,
+.copyrightTerms {
+  flex-grow: 1;
+}
+
+.addressContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.addressList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.addressIcon {
+  fill: var(--color-secondary-white);
+}
+
+.addressIcon:hover {
+  fill: var(--color-primary-blue);
+}
+
+.copyrightTerms {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.copyright {
+  font-size: 12px;
+  color: var(--color-parimary-grey);
+}
+
+.link {
+  color: var(--color-secondary-white);
+  font-style: normal;
+}
+
+.link:hover {
+  color: var(--color-primary-blue);
+  transition: color 0.2s;
+}

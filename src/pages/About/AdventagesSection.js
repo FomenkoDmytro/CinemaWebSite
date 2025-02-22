@@ -6,8 +6,8 @@ function AdventagesSection() {
     <section className={styles.adventagesSection}>
       <div className="container">
         <div className={styles.adventagesContainer}>
-          <h2 className="text-primary-blue text-black">
-            EpicVision – це більше, ніж просто кінотеатр:
+          <h2 className="text-primary-blue text-extraBold">
+            EpicVision – це більше, ніж просто кінотеатр
           </h2>
           <ul className={styles.adventagesList}>
             <li>

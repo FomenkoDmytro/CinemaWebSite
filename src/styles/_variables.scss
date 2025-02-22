@@ -1,9 +1,17 @@
 :root {
   --color-primary-dark: #0f172a;
   --color-primary-blue: #2563eb;
+  --color-primary-blue-dark: #011c44;
   --color-parimary-grey: #cbd5e1;
   --color-secondary-white: #ffffff;
   --color-secondary-grey: #e2e8f0;
+  // variant 2
+  // --color-primary-dark: #333333;
+  // --color-primary-blue: #f1c40f;
+  // --color-primary-blue-dark: #222222;
+  // --color-parimary-grey: #cbd5e1;
+  // --color-secondary-white: #ffffff;
+  // // --color-secondary-grey: #e2e8f0;
 }
 
 $bp-desktop: 1440px;

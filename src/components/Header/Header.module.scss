@@ -1,53 +1,43 @@
 @import "../../styles/_variables.scss";
 
 .header {
-  // position: fixed;
-  // top: 0;
-  // margin: 0;
   width: 100%;
-  // max-width: 1440px;
-  // height: 70px;
-  // padding: 16px 0;
-  background-color: rgba(240, 248, 255, 0.95);
-  border-bottom: 2px solid var(--color-parimary-grey);
-  box-shadow: 0px 4px 4px 0px rgba(168, 198, 245, 0.38);
+  background-color: var(--color-primary-blue-dark);
+  color: var(--color-secondary-white);
 }
 
 .headerContainer {
   display: flex;
   justify-content: center;
-  // flex-grow: 1;
   align-items: center;
   gap: 40px;
   height: 70px;
-
-  // backdrop-filter: blur(20px);
-
-  // margin: 0 auto;
 }
 
 .nav {
-  // left: 0;
-  // margin: 0 auto;
   display: flex;
   align-items: center;
   flex-grow: 1;
-  // justify-content: center;
   justify-content: space-between;
   gap: 40px;
-  // height: 80px;
-  // background-color: rgba(240, 236, 236, 0.5);
-  // padding: 0 24px;
-  // backdrop-filter: blur(10px);
-  // box-shadow: 0px 4px 4px 0px rgba(168, 198, 245, 0.38);
-  // width: 100%;
-  // max-width: $bp-desktop;
 }
 
 .menu {
+  // margin: 0;
   display: flex;
   gap: 38px;
   padding: 0;
   flex-grow: 1;
   justify-content: center;
+  align-items: center;
+}
+
+.link {
+  color: var(--color-secondary-white);
+  font-style: normal;
+}
+
+.link:hover {
+  color: var(--color-primary-blue);
+  transition: color 0.2s;
 }
