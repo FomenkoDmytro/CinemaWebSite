@@ -14,7 +14,7 @@ function Header() {
       <div className="container">
         <div className={styles.headerContainer}>
           <nav className={styles.nav}>
-            <span onClick={() => handleNavigate("/")}>
+            <span className={styles.logo} onClick={() => handleNavigate("/")}>
               <img
                 src={require("../../assets/images/logo.png")}
                 alt="Логотип кінотеатру"
@@ -33,7 +33,10 @@ function Header() {
               <li className={styles.link} onClick={() => handleNavigate("/")}>
                 Help Center
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
+              <li
+                className={styles.link}
+                onClick={() => handleNavigate("/about")}
+              >
                 Про компанію
               </li>
             </ul>

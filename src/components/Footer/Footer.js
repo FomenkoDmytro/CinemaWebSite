@@ -23,23 +23,53 @@ function Footer() {
               </span>
             </div>
             <ul className={styles.menu}>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Terms
+              <li>
+                <span
+                  className={styles.link}
+                  onClick={() => handleNavigate("/")}
+                >
+                  Terms
+                </span>
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Privacy
+              <li>
+                <span
+                  className={styles.link}
+                  onClick={() => handleNavigate("/")}
+                >
+                  Privacy
+                </span>
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Support
+              <li>
+                <span
+                  className={styles.link}
+                  onClick={() => handleNavigate("/")}
+                >
+                  Support
+                </span>
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                About
+              <li>
+                <span
+                  className={styles.link}
+                  onClick={() => handleNavigate("/about")}
+                >
+                  Про компанію
+                </span>
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Resources
+              <li>
+                <span
+                  className={styles.link}
+                  onClick={() => handleNavigate("/")}
+                >
+                  Resources
+                </span>
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Contact
+              <li>
+                <span
+                  className={styles.link}
+                  onClick={() => handleNavigate("/")}
+                >
+                  Contact
+                </span>
               </li>
             </ul>
           </nav>

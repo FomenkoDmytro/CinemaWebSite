@@ -1,16 +1,19 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles/main.scss";
-import "./styles/global.scss";
-import "./styles/_fonts.scss";
-import "./styles/_text.scss";
-import "./styles/_links.scss";
-import About from "./pages/About/About";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { lazy } from "react";
+
+const Layout = lazy(() => import("./components/Layout/Layout"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const About = lazy(() => import("./pages/About/About"));
 
 function App() {
   return (
-    <div className="App">
-      <About />
+    <div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+      </Routes>
     </div>
   );
 }

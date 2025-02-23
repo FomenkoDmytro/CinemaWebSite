@@ -8,7 +8,7 @@ import hall4Image from "../../assets/images/CinemaHall4.jpg";
 
 function CinemasCarousel() {
   return (
-    <Carousel data-bs-theme="dark" className={styles.carouselContainer}>
+    <Carousel data-bs-theme="light" className={styles.carouselContainer}>
       <Carousel.Item>
         <img
           className={`${styles.img} d-block w-100`}

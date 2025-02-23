@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+.title {
+  text-align: center;
+}
+
 .adventagesList > * {
   min-width: calc((100% - 60px) / 4);
 }

@@ -25,14 +25,13 @@ address {
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
+  text-align: center;
 }
 
 .logo {
   display: flex;
   justify-content: flex-start;
-}
-
-.menu {
+  cursor: pointer;
 }
 
 .icon {
@@ -41,7 +40,7 @@ address {
   justify-content: center;
 }
 
-.addressContacnts,
+.addressContacts,
 .copyrightTerms {
   flex-grow: 1;
 }
@@ -56,6 +55,7 @@ address {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  text-align: center;
 }
 
 .addressIcon {
@@ -70,6 +70,7 @@ address {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  text-align: center;
 }
 
 .copyright {
@@ -85,4 +86,5 @@ address {
 .link:hover {
   color: var(--color-primary-blue);
   transition: color 0.2s;
+  cursor: pointer;
 }

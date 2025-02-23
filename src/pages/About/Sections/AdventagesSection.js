@@ -1,12 +1,12 @@
 import styles from "./AdventagesSection.module.scss";
-import AdventageCard from "../../components/AdventageCard/AdventageCard";
+import AdventageCard from "../../../components/AdventageCard/AdventageCard";
 
 function AdventagesSection() {
   return (
     <section className={styles.adventagesSection}>
       <div className="container">
         <div className={styles.adventagesContainer}>
-          <h2 className="text-primary-blue text-extraBold">
+          <h2 className={`${styles.title} text-primary-blue text-extraBold`}>
             EpicVision – це більше, ніж просто кінотеатр
           </h2>
           <ul className={styles.adventagesList}>

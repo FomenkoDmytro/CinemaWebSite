@@ -1,21 +1,15 @@
-import AdventagesSection from "./AdventagesSection";
-import HeroSection from "./HeroSection";
-import OurCimenasSection from "./OurCinemasSection";
-import LocationSection from "./LocationSection";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import AdventagesSection from "./Sections/AdventagesSection";
+import HeroSection from "./Sections/HeroSection";
+import OurCimenasSection from "./Sections/OurCinemasSection";
+import LocationSection from "./Sections/LocationSection";
 
 function About() {
   return (
     <div>
-      <Header />
-      <main>
-        <HeroSection />
-        <AdventagesSection />
-        <OurCimenasSection />
-        <LocationSection />
-      </main>
-      <Footer />
+      <HeroSection />
+      <AdventagesSection />
+      <OurCimenasSection />
+      <LocationSection />
     </div>
   );
 }
