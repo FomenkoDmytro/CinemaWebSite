@@ -1,5 +1,4 @@
 import styles from "./Header.module.scss";
-import "../../styles/_Button.scss";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
@@ -40,7 +39,10 @@ function Header() {
                 Про компанію
               </li>
             </ul>
-            <span className={styles.link} onClick={() => handleNavigate("/")}>
+            <span
+              className={styles.link}
+              onClick={() => handleNavigate("/login")}
+            >
               Особистий кабінет
             </span>
           </nav>

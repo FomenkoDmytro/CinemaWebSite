@@ -5,11 +5,14 @@ import "./index.css";
 import App from "./App";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles/_variables.scss";
 import "./styles/main.scss";
 import "./styles/global.scss";
 import "./styles/_fonts.scss";
 import "./styles/_text.scss";
 import "./styles/_links.scss";
+import "./styles/_button.scss";
+import "./styles/_input.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

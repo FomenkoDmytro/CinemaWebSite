@@ -120,8 +120,11 @@ function Footer() {
               </div>
             </div>
             <div className={styles.copyrightTerms}>
-              <p className={styles.link} onClick={() => handleNavigate("/")}>
-                Політика....
+              <p
+                className={styles.link}
+                onClick={() => handleNavigate("/policy")}
+              >
+                Політика конфіденційності
               </p>
               <p className={styles.copyright}>&copy; 2025. Дані захищені.</p>
             </div>

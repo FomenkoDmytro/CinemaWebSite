@@ -1,0 +1,38 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 600;
+}
+
+.form {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  max-width: 600px;
+}
+
+.text {
+  text-align: center;
+}
+
+.link {
+  color: var(--color-primary-blue);
+  font-weight: 600;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+.error {
+  font-size: 13px;
+  padding-left: 20px;
+  color: red;
+}

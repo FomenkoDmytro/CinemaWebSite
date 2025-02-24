@@ -1,0 +1,20 @@
+.input {
+  //   display: block;
+  padding: 18px 32px;
+  width: 100%;
+  font-size: 13px;
+
+  border: 2px solid var(--color-secondary-grey);
+  border-radius: 32px;
+  background-color: transparent;
+  color: var(--color-primary-blue);
+}
+
+input:focus {
+  background-color: var(--color-secondary-grey);
+  outline: none;
+}
+
+input::placeholder {
+  color: var(--color-primary-blue-dark);
+}
