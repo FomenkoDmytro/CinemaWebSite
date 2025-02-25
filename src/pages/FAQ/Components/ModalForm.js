@@ -1,8 +1,8 @@
 import { Field, Form, Formik } from "formik";
-import styles from "./RegistrationForm.module.scss";
+import styles from "./ModalForm.module.scss";
 import { useNavigate } from "react-router-dom";
 
-function Registration() {
+function ModalForm() {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
@@ -11,8 +11,6 @@ function Registration() {
 
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const phonePattern = /^(?:\+38)?0\d{9}$/;
-  const passwordPattern =
-    /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
 
   const handleSubmit = (values, { setValues }) => {
     alert("OK");
@@ -20,14 +18,12 @@ function Registration() {
 
   return (
     <div className={styles.formContainer}>
-      <h1 className={`${styles.title} text-primary-blue`}>Реєстрація</h1>
       <Formik
         initialValues={{
           email: "",
           name: "",
-          password: "",
-          confirmPassword: "",
           phone: "",
+          reason: "",
         }}
         validate={(values) => {
           const errors = {};
@@ -43,17 +39,12 @@ function Registration() {
             errors.name = "Ім'я повинно бути до 20 символів";
           }
 
-          if (!passwordPattern.test(values.password)) {
-            errors.password =
-              "Пароль має містити хоча б одну велику літеру, цифру і спеціальний символ!";
-          }
-
-          if (values.password !== values.confirmPassword) {
-            errors.confirmPassword = "Паролі не співпадають";
-          }
-
           if (!phonePattern.test(values.phone)) {
             errors.phone = "Невірний формат телефону";
+          }
+
+          if (values.reason.length < 20) {
+            errors.name = "Причина зверення повинна бути більше 20 символів";
           }
 
           return errors;
@@ -80,37 +71,11 @@ function Registration() {
                 className="input"
                 id="name"
                 name="name"
-                placeholder="Введіть Ваше ім'я"
+                placeholder="Як до Вас звертатись"
                 type="text"
               />
               {touched.name && errors.name && (
                 <div className={styles.error}>{errors.name}</div>
-              )}
-            </div>
-
-            <div>
-              <Field
-                className="input"
-                id="password"
-                name="password"
-                placeholder="Введіть пароль"
-                type="password"
-              />
-              {touched.password && errors.password && (
-                <div className={styles.error}>{errors.password}</div>
-              )}
-            </div>
-
-            <div>
-              <Field
-                className="input"
-                id="confirmPassword"
-                name="confirmPassword"
-                placeholder="Підтвердіть пароль"
-                type="password"
-              />
-              {errors.confirmPassword && (
-                <div className={styles.error}>{errors.confirmPassword}</div>
               )}
             </div>
 
@@ -127,34 +92,28 @@ function Registration() {
                 <div className={styles.error}>{errors.phone}</div>
               )}
             </div>
+
+            <div>
+              <Field
+                className={`${styles.textArea} input`}
+                id="reason"
+                name="reason"
+                placeholder="Опишіть причину звернення"
+                as="textarea"
+              />
+              {touched.name && errors.name && (
+                <div className={styles.error}>{errors.reason}</div>
+              )}
+            </div>
+
             <button type="submit" className="button">
-              Зареєструватись
+              Надіслати
             </button>
           </Form>
         )}
       </Formik>
-      <div className={styles.text}>
-        <p>
-          Вже маєш аккаунт?{" "}
-          <span
-            className={`${styles.link} link`}
-            onClick={() => handleNavigate("/login")}
-          >
-            Авторизація
-          </span>
-        </p>
-        <p>
-          Забув пароль?{" "}
-          <span
-            className={`${styles.link} link`}
-            onClick={() => handleNavigate("/resetpassword")}
-          >
-            Відновити пароль
-          </span>
-        </p>
-      </div>
     </div>
   );
 }
 
-export default Registration;
+export default ModalForm;

@@ -26,11 +26,17 @@ function Header() {
               <li className={styles.link} onClick={() => handleNavigate("/")}>
                 Solutions
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Services
+              <li
+                className={styles.link}
+                onClick={() => handleNavigate("/purchaseandreturn")}
+              >
+                Покупка та повернення квитків
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Help Center
+              <li
+                className={styles.link}
+                onClick={() => handleNavigate("/faq")}
+              >
+                Служба підтримки
               </li>
               <li
                 className={styles.link}

@@ -8,6 +8,10 @@ const Policy = lazy(() => import("./pages/Policy/Policy"));
 const Login = lazy(() => import("./pages/Login/Login"));
 const Registration = lazy(() => import("./pages/Registration/Registration"));
 const ResetPassword = lazy(() => import("./pages/ResetPassword/ResetPassword"));
+const PurchaseAndReturn = lazy(() =>
+  import("./pages/PurchaseAndReturn/PurchaseAndReturn")
+);
+const FAQ = lazy(() => import("./pages/FAQ/FAQ"));
 
 function App() {
   return (
@@ -20,6 +24,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/resetpassword" element={<ResetPassword />} />
+          <Route path="/purchaseandreturn" element={<PurchaseAndReturn />} />
+          <Route path="/faq" element={<FAQ />} />
         </Route>
       </Routes>
     </div>

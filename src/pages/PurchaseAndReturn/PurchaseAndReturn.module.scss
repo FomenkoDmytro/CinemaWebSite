@@ -1,0 +1,31 @@
+h2,
+h3 {
+  margin: 20px 0 !important;
+}
+
+p {
+  margin-top: 10px !important;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+.title {
+  text-align: center;
+  font-weight: 600;
+}
+
+.list {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+.link {
+  color: var(--color-primary-blue);
+  font-weight: 600;
+}
+
+.link:hover {
+  cursor: pointer;
+}

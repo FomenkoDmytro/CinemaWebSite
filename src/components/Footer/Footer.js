@@ -34,17 +34,17 @@ function Footer() {
               <li>
                 <span
                   className={styles.link}
-                  onClick={() => handleNavigate("/")}
+                  onClick={() => handleNavigate("/purchaseandreturn")}
                 >
-                  Privacy
+                  Покупка та повернення квитків
                 </span>
               </li>
               <li>
                 <span
                   className={styles.link}
-                  onClick={() => handleNavigate("/")}
+                  onClick={() => handleNavigate("/faq")}
                 >
-                  Support
+                  Служба підтримки
                 </span>
               </li>
               <li>
