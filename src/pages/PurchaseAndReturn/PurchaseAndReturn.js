@@ -1,11 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import styles from "./PurchaseAndReturn.module.scss";
+import styles from "./Return.module.scss";
+import { useState } from "react";
+import ModalReturn from "./ReturnForm/ModalReturn";
 
-function PurchaseAndReturn() {
+function Return() {
   const navigate = useNavigate();
+  const [ReturnFormShow, setReturnFormShow] = useState(false);
 
   const handleNavigate = (path) => {
     navigate(path);
+  };
+
+  const handleClick = () => {
+    setReturnFormShow(true);
   };
 
   return (
@@ -75,11 +82,17 @@ function PurchaseAndReturn() {
         Ці правила можуть змінюватися, тому рекомендуємо ознайомлюватися з
         актуальними умовами перед покупкою.
       </p>
-      <p className={`${styles.link} link`} onClick={() => handleNavigate("/")}>
-        Форма для оформлення заявки на повернення
-      </p>
+      <div>
+        <p className={`${styles.link} link`} onClick={handleClick}>
+          Форма для оформлення заявки на повернення
+        </p>
+        <ModalReturn
+          show={ReturnFormShow}
+          onHide={() => setReturnFormShow(false)}
+        />
+      </div>
     </div>
   );
 }
 
-export default PurchaseAndReturn;
+export default Return;

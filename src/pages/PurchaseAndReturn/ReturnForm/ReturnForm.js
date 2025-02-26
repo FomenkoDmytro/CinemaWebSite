@@ -1,8 +1,8 @@
-import { Field, Form, Formik } from "formik";
-import styles from "./ModalForm.module.scss";
+import { Form, Field, Formik } from "formik";
+import styles from "./ReturnForm.module.scss";
 import { useNavigate } from "react-router-dom";
 
-function ModalForm() {
+function ReturnForm() {
   const navigate = useNavigate();
 
   const handleNavigate = (path) => {
@@ -23,7 +23,9 @@ function ModalForm() {
           email: "",
           name: "",
           phone: "",
-          reason: "",
+          date: "",
+          movie: "",
+          comments: "",
         }}
         validate={(values) => {
           const errors = {};
@@ -43,8 +45,12 @@ function ModalForm() {
             errors.phone = "Невірний формат телефону";
           }
 
-          if (values.reason.length < 20) {
-            errors.reason = "Причина зверення повинна бути більше 20 символів";
+          if (!values.date) {
+            errors.date = "Оберіть дату сеансу";
+          }
+
+          if (values.movie.length < 4) {
+            errors.movie = "Занадто коротка назва фільму та час сеансу";
           }
 
           return errors;
@@ -93,17 +99,36 @@ function ModalForm() {
               )}
             </div>
 
+            <div className={styles.inputContainer}>
+              <label htmlFor="date" className={styles.label}>
+                Дата сеансу
+              </label>
+              <Field className="input" id="date" name="date" type="date" />
+              {touched.date && errors.date && (
+                <div className={styles.error}>{errors.date}</div>
+              )}
+            </div>
+
+            <div>
+              <Field
+                className="input"
+                id="movie"
+                name="movie"
+                placeholder="Введіть назву фільма та час сенсу"
+              />
+              {touched.date && errors.movie && (
+                <div className={styles.error}>{errors.movie}</div>
+              )}
+            </div>
+
             <div>
               <Field
                 className={`${styles.textArea} input`}
-                id="reason"
-                name="reason"
-                placeholder="Опишіть причину звернення"
+                id="comments"
+                name="comments"
+                placeholder="Додаткові коментарі"
                 as="textarea"
               />
-              {touched.reason && errors.reason && (
-                <div className={styles.error}>{errors.reason}</div>
-              )}
             </div>
 
             <button type="submit" className="button">
@@ -116,4 +141,4 @@ function ModalForm() {
   );
 }
 
-export default ModalForm;
+export default ReturnForm;

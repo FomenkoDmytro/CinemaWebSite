@@ -1,7 +1,7 @@
 import Modal from "react-bootstrap/Modal";
-import ModalForm from "./ModalForm";
+import ReturnForm from "./ReturnForm";
 
-function ModalFAQ(props) {
+function ModalReturn(props) {
   return (
     <Modal
       {...props}
@@ -14,14 +14,14 @@ function ModalFAQ(props) {
           className="text-primary-blue"
           id="contained-modal-title-vcenter"
         >
-          Зв'яжіться з нами
+          Повернення квитків
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <ModalForm />
+        <ReturnForm />
       </Modal.Body>
     </Modal>
   );
 }
 
-export default ModalFAQ;
+export default ModalReturn;
