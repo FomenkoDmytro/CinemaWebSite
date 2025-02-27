@@ -28,7 +28,15 @@ function Footer() {
                   className={styles.link}
                   onClick={() => handleNavigate("/")}
                 >
-                  Terms
+                  Зараз у кіно
+                </span>
+              </li>
+              <li>
+                <span
+                  className={styles.link}
+                  onClick={() => handleNavigate("/soon")}
+                >
+                  Скоро у кіно
                 </span>
               </li>
               <li>
@@ -53,22 +61,6 @@ function Footer() {
                   onClick={() => handleNavigate("/about")}
                 >
                   Про компанію
-                </span>
-              </li>
-              <li>
-                <span
-                  className={styles.link}
-                  onClick={() => handleNavigate("/")}
-                >
-                  Resources
-                </span>
-              </li>
-              <li>
-                <span
-                  className={styles.link}
-                  onClick={() => handleNavigate("/")}
-                >
-                  Contact
                 </span>
               </li>
             </ul>

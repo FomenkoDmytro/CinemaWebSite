@@ -21,10 +21,13 @@ function Header() {
             </span>
             <ul className={styles.menu}>
               <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Products
+                Зараз у кіно
               </li>
-              <li className={styles.link} onClick={() => handleNavigate("/")}>
-                Solutions
+              <li
+                className={styles.link}
+                onClick={() => handleNavigate("/soon")}
+              >
+                Скоро у кіно
               </li>
               <li
                 className={styles.link}

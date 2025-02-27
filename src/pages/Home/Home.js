@@ -1,5 +1,11 @@
+import MovieCarousel from "./Component/MovieCarousel";
+
 function Home() {
-  return <div>Home page</div>;
+  return (
+    <div>
+      <MovieCarousel></MovieCarousel>
+    </div>
+  );
 }
 
 export default Home;

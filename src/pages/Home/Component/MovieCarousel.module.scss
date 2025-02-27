@@ -1,0 +1,43 @@
+.carouselContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.carouselItem {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 32px;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  color: white;
+  text-align: center;
+  padding: 10px;
+
+  font-size: 40px;
+}
+
+.title {
+  background: rgba(0, 0, 0, 0.8); // Затемнение фона заголовка
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+}
