@@ -15,6 +15,21 @@
 .carouselItem {
   display: flex;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+}
+
+.carouselItem:hover .img {
+  transform: translate(-25%, -24%) scale(0.5);
+}
+
+.carouselItem:hover .caption {
+  visibility: hidden;
+}
+
+.bgContainer {
+  position: absolute;
 }
 
 .img {
@@ -22,22 +37,96 @@
   height: 600px;
   object-fit: cover;
   border-radius: 32px;
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
 }
 
 .caption {
+  z-index: 999;
   position: absolute;
   bottom: 0;
   width: 100%;
-
   color: white;
   text-align: center;
   padding: 10px;
-
   font-size: 40px;
 }
 
 .title {
-  background: rgba(0, 0, 0, 0.8); // Затемнение фона заголовка
+  background: rgba(0, 0, 0, 0.8);
   border-bottom-left-radius: 32px;
   border-bottom-right-radius: 32px;
+}
+
+.bgContainer {
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+}
+
+.scheduleContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  flex-wrap: wrap;
+  height: 90%;
+  width: 45%;
+  background-color: var(--color-secondary-grey);
+  border-radius: 20px;
+}
+
+.scheduleTitle {
+  text-align: center;
+}
+
+.sessionTime:hover {
+  cursor: pointer;
+  color: var(--color-primary-blue);
+  font-weight: 600;
+}
+
+.shortInfo {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+  max-width: 50%;
+}
+
+.shortInfoTitle {
+  cursor: pointer;
+  color: var(--color-primary-blue);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.movieInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.movieInfo:hover {
+  cursor: pointer;
+}
+
+.movieInfo:hover .movieInfoIcon {
+  fill: var(--color-primary-blue);
+}
+
+.movieInfo:hover .movieInfoText {
+  color: var(--color-primary-blue);
+}
+
+.movieInfoIcon {
+  fill: var(--color-primary-dark);
 }
