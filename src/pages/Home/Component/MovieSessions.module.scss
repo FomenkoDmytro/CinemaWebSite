@@ -1,0 +1,9 @@
+.scheduleTitle {
+  text-align: center;
+}
+
+.sessionTime:hover {
+  cursor: pointer;
+  color: var(--color-primary-blue);
+  font-weight: 600;
+}

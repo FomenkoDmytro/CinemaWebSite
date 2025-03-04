@@ -1,0 +1,40 @@
+.shortInfo {
+  position: absolute;
+  top: 50%;
+  left: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+  max-width: 50%;
+}
+
+.shortInfoTitle {
+  cursor: pointer;
+  color: var(--color-primary-blue);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.movieInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.movieInfo:hover {
+  cursor: pointer;
+}
+
+.movieInfo:hover .movieInfoIcon {
+  fill: var(--color-primary-blue);
+}
+
+.movieInfo:hover .movieInfoText {
+  color: var(--color-primary-blue);
+}
+
+.movieInfoIcon {
+  fill: var(--color-primary-dark);
+}
