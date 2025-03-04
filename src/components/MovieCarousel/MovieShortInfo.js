@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styles from "./MovieShortInfo.module.scss";
-import Icon from "../../../components/Icon/Icon";
+import Icon from "../Icon/Icon";
 
 function MovieShortInfo({ movie }) {
   const navigate = useNavigate();
