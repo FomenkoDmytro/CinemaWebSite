@@ -144,7 +144,11 @@ const movies = [
 ];
 
 function Soon() {
-  return <MovieCarousel movies={movies} />;
+  return (
+    <div className="container">
+      <MovieCarousel movies={movies} />
+    </div>
+  );
 }
 
 export default Soon;

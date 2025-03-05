@@ -1,14 +1,14 @@
-p {
-  margin-top: 10px !important;
-}
-
 .container {
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .title {
   text-align: center;
   font-weight: 600;
+  padding-top: 20px;
 }
 
 .extraQuestion {

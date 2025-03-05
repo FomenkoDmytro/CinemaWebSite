@@ -1,3 +1,17 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  border: 2px solid var(--color-parimary-grey);
+}
+
+.header {
+  // border: 2px solid var(--color-parimary-grey);
+}
+
 .text {
   font-size: 14px;
 }

@@ -145,7 +145,11 @@ const movies = [
 
 function Home() {
   // тут повинен бути запит щодо отримання переліку фільмів
-  return <MovieCarousel movies={movies} />;
+  return (
+    <div className="container">
+      <MovieCarousel movies={movies} />
+    </div>
+  );
 }
 
 export default Home;

@@ -15,7 +15,7 @@ function Return() {
         Правила придбання та повернення квитків
       </h2>
 
-      <h3>1. Придбання квитків</h3>
+      <h3 className={styles.chapterTitle}>1. Придбання квитків</h3>
       <ul className={styles.list}>
         <li>Квитки можна придбати онлайн на сайті кінотеатру або в касах.</li>
         <li>
@@ -29,7 +29,7 @@ function Return() {
         <li>Квиток дійсний лише на зазначену дату, час та фільм.</li>
       </ul>
 
-      <h3>2. Вхід до залу</h3>
+      <h3 className={styles.chapterTitle}>2. Вхід до залу</h3>
       <ul className={styles.list}>
         <li>
           Для входу необхідно пред’явити електронний або роздрукований квиток із
@@ -42,7 +42,7 @@ function Return() {
         </li>
       </ul>
 
-      <h3>3. Повернення та обмін квитків</h3>
+      <h3 className={styles.chapterTitle}>3. Повернення та обмін квитків</h3>
       <ul className={styles.list}>
         <li>
           Повернення квитків можливе не пізніше, ніж за 1 годину до початку
@@ -61,7 +61,7 @@ function Return() {
         </li>
       </ul>
 
-      <h3>4. Додаткові умови</h3>
+      <h3 className={styles.chapterTitle}>4. Додаткові умови</h3>
       <ul className={styles.list}>
         <li>
           Акційні квитки та квитки за спеціальними пропозиціями поверненню не

@@ -3,24 +3,28 @@ import styles from "./AccordionFAQ.module.scss";
 
 function AccordionFAQ() {
   return (
-    <Accordion>
-      <Accordion.Item eventKey="0">
-        <Accordion.Header>Як придбати квиток онлайн?</Accordion.Header>
+    <Accordion className={styles.accordion}>
+      <Accordion.Item eventKey="0" className={styles.item}>
+        <Accordion.Header className={styles.header}>
+          Як придбати квиток онлайн?
+        </Accordion.Header>
         <Accordion.Body className={styles.text}>
           Ви можете придбати квиток на сайті кінотеатру, обравши фільм, сеанс та
           місця у залі. Після оплати електронний квиток буде надіслано на вашу
           електронну пошту.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="1">
-        <Accordion.Header>Чи можна оплатити квиток готівкою?</Accordion.Header>
+      <Accordion.Item eventKey="1" className={styles.item}>
+        <Accordion.Header className={styles.header}>
+          Чи можна оплатити квиток готівкою?
+        </Accordion.Header>
         <Accordion.Body className={styles.text}>
           Так, квитки можна придбати в касі кінотеатру та оплатити готівкою або
           карткою.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="2">
-        <Accordion.Header>
+      <Accordion.Item eventKey="2" className={styles.item}>
+        <Accordion.Header className={styles.header}>
           Як використовувати електронний квиток?
         </Accordion.Header>
         <Accordion.Body className={styles.text}>
@@ -28,8 +32,8 @@ function AccordionFAQ() {
           смартфона або пред’явити роздрукований квиток.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="3">
-        <Accordion.Header>
+      <Accordion.Item eventKey="3" className={styles.item}>
+        <Accordion.Header className={styles.header}>
           Чи можна повернути або обміняти квиток?
         </Accordion.Header>
         <Accordion.Body className={styles.text}>
@@ -37,15 +41,17 @@ function AccordionFAQ() {
           сеансу. Обмін можливий за умови наявності вільних місць.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="4">
-        <Accordion.Header>Що робити, якщо сеанс скасували?</Accordion.Header>
+      <Accordion.Item eventKey="4" className={styles.item}>
+        <Accordion.Header className={styles.header}>
+          Що робити, якщо сеанс скасували?
+        </Accordion.Header>
         <Accordion.Body className={styles.text}>
           У разі скасування або перенесення сеансу ви отримаєте повне повернення
           коштів або зможете обрати інший сеанс.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="5">
-        <Accordion.Header>
+      <Accordion.Item eventKey="5" className={styles.item}>
+        <Accordion.Header className={styles.header}>
           Чи є знижки для дітей, студентів та пенсіонерів?
         </Accordion.Header>
         <Accordion.Body className={styles.text}>
@@ -53,8 +59,8 @@ function AccordionFAQ() {
           сайті або в касі.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="6">
-        <Accordion.Header>
+      <Accordion.Item eventKey="6" className={styles.item}>
+        <Accordion.Header className={styles.header}>
           Чи можна прийти до кінотеатру зі своєю їжею?
         </Accordion.Header>
         <Accordion.Body className={styles.text}>
@@ -63,8 +69,8 @@ function AccordionFAQ() {
           снеки.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="7">
-        <Accordion.Header>
+      <Accordion.Item eventKey="7" className={styles.item}>
+        <Accordion.Header className={styles.header}>
           Чи можна забронювати квиток без оплати?
         </Accordion.Header>
         <Accordion.Body className={styles.text}>
@@ -72,8 +78,10 @@ function AccordionFAQ() {
           одразу на сайті або в касі.
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="8">
-        <Accordion.Header>Що робити, якщо я загубив квиток?</Accordion.Header>
+      <Accordion.Item eventKey="8" className={styles.item}>
+        <Accordion.Header className={styles.header}>
+          Що робити, якщо я загубив квиток?
+        </Accordion.Header>
         <Accordion.Body className={styles.text}>
           Якщо ви придбали квиток онлайн, його можна знайти у вашій електронній
           пошті або в особистому кабінеті на сайті кінотеатру.
