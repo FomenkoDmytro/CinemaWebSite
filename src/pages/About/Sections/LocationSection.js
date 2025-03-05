@@ -23,7 +23,7 @@ function LocationSection() {
             allowFullScreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          />
         </div>
       </div>
     </section>

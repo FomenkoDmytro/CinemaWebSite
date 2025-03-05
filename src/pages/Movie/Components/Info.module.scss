@@ -1,0 +1,40 @@
+.infoContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.trainerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.img {
+  height: 400px;
+  width: 250px;
+  border-radius: 20px;
+}
+
+.title {
+  color: var(--color-primary-blue);
+  font-weight: 600;
+}
+
+.credentionalsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.credentionals {
+  gap: 20px;
+}
+
+.credentionals > li {
+  display: flex;
+}
+
+.key {
+  min-width: 150px;
+  color: var(--color-primary-blue);
+}

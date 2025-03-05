@@ -1,15 +1,9 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./Return.module.scss";
 import { useState } from "react";
 import ModalReturn from "./ReturnForm/ModalReturn";
 
 function Return() {
-  const navigate = useNavigate();
   const [ReturnFormShow, setReturnFormShow] = useState(false);
-
-  const handleNavigate = (path) => {
-    navigate(path);
-  };
 
   const handleClick = () => {
     setReturnFormShow(true);

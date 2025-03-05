@@ -13,7 +13,7 @@ function MovieShortInfo({ movie }) {
       <div>
         <p
           className={styles.shortInfoTitle}
-          onClick={() => handleNavigate(`/${movie.title}`)}
+          onClick={() => handleNavigate(`/movie/${movie.title}`)}
         >
           {movie.title}{" "}
         </p>
@@ -24,7 +24,7 @@ function MovieShortInfo({ movie }) {
       </div>
       <div
         className={styles.movieInfo}
-        onClick={() => handleNavigate(`/${movie.title}`)}
+        onClick={() => handleNavigate(`/movie/${movie.title}`)}
       >
         <Icon icon="icon-info" className={styles.movieInfoIcon} w="32" h="32" />{" "}
         <span className={styles.movieInfoText}>Про фільм</span>
