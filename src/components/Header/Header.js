@@ -47,6 +47,12 @@ function Header() {
               >
                 Про компанію
               </li>
+              <li
+                className={styles.link}
+                onClick={() => handleNavigate("/movierepository")}
+              >
+                Фільми
+              </li>
             </ul>
             <span
               className={styles.link}

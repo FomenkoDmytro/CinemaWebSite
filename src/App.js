@@ -14,6 +14,10 @@ const PurchaseAndReturn = lazy(() =>
 const FAQ = lazy(() => import("./pages/FAQ/FAQ"));
 const Soon = lazy(() => import("./pages/Soon/Soon"));
 const Movie = lazy(() => import("./pages/Movie/Movie"));
+const MovieRepository = lazy(() =>
+  import("./pages/MovieRepository/MovieRepository")
+);
+const AddMovie = lazy(() => import("./pages/AddMovie/AddMovie"));
 
 function App() {
   return (
@@ -30,6 +34,8 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/soon" element={<Soon />} />
           <Route path="movie/:id" element={<Movie />} />
+          <Route path="/movierepository" element={<MovieRepository />} />
+          <Route path="/addnewmovie" element={<AddMovie />} />
         </Route>
       </Routes>
     </div>

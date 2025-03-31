@@ -1,0 +1,54 @@
+.container {
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.functionalPanel {
+  display: flex;
+  gap: 10px;
+}
+
+.search {
+  flex-shrink: 1;
+}
+
+.addButton {
+  min-width: 200px;
+}
+
+.moviesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movieCard {
+  display: flex;
+  flex-basis: calc(50% - 10px);
+  max-width: 50%;
+  gap: 10px;
+}
+
+.movieTitle:hover {
+  color: var(--color-primary-blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.movieImg {
+  border-radius: 20px;
+  width: 200px;
+  height: 250px;
+}
