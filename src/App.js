@@ -18,6 +18,7 @@ const MovieRepository = lazy(() =>
   import("./pages/MovieRepository/MovieRepository")
 );
 const AddMovie = lazy(() => import("./pages/AddMovie/AddMovie"));
+const Dictionaries = lazy(() => import("./pages/Dictionaries/Dicrtionaries"));
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="movie/:id" element={<Movie />} />
           <Route path="/movierepository" element={<MovieRepository />} />
           <Route path="/addnewmovie" element={<AddMovie />} />
+          <Route path="/dictionaries" element={<Dictionaries />} />
         </Route>
       </Routes>
     </div>

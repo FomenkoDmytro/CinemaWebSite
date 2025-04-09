@@ -53,6 +53,12 @@ function Header() {
               >
                 Фільми
               </li>
+              <li
+                className={styles.link}
+                onClick={() => handleNavigate("/dictionaries")}
+              >
+                Довідники
+              </li>
             </ul>
             <span
               className={styles.link}

@@ -14,3 +14,19 @@
   background-color: transparent;
   color: var(--color-primary-blue);
 }
+
+.buttonSmall {
+  // display: block;
+  padding: 8px 10px;
+  color: var(--color-secondary-white);
+  font-weight: 300;
+  border-radius: 32px;
+  border: 2px solid var(--color-primary-blue);
+  background-color: var(--color-primary-blue);
+  cursor: pointer;
+}
+
+.buttonSmall:hover {
+  background-color: transparent;
+  color: var(--color-primary-blue);
+}

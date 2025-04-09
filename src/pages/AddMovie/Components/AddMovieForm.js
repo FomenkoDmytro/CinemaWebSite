@@ -223,7 +223,7 @@ function AddMovieForm() {
 
             <div>
               <label htmlFor="audience" className={styles.label}>
-                Категорія аудиторії
+                Категорія аудиторії{" "}
               </label>
               <Select
                 name="audience"

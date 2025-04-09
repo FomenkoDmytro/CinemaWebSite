@@ -1,0 +1,55 @@
+.title {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.label {
+  padding-left: 32px;
+}
+
+.formContainer {
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@layer components {
+  :global(.select__control) {
+    padding: 18px 32px !important;
+    width: 100% !important;
+    font-size: 13px !important;
+    border: 2px solid var(--color-secondary-grey) !important;
+    border-radius: 32px !important;
+    background-color: transparent !important;
+    color: var(--color-primary-blue) !important;
+  }
+
+  :global(.select__control--is-focused) {
+    background-color: var(--color-secondary-grey) !important;
+    outline: none !important;
+  }
+
+  :global(.select__menu) {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  :global(.select__option) {
+    padding: 10px !important;
+    font-size: 12px !important;
+    color: var(--color-primary-blue) !important;
+  }
+
+  :global(.select__option:hover) {
+    background-color: var(--color-secondary-grey) !important;
+  }
+
+  :global(.select__single-value) {
+    color: var(--color-primary-blue) !important;
+  }
+
+  :global(.select__multi-value__label) {
+    color: var(--color-primary-blue) !important;
+  }
+}
