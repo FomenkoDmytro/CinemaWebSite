@@ -1,13 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
-import { LanguagesApi } from "../../../API/Languages/languages.api.ts";
+import { dictionaryApiMap } from "../../../API/dictionaryApiMap.ts";
+import { dictionaryFieldMap } from "../../../API/dictionaryFieldMap.ts";
 
 function Dictionary({ type, name }) {
-  const url = `${type}/dictionary`;
+  const api = dictionaryApiMap[type];
+  const fieldName = dictionaryFieldMap[type];
   const { data, isLoading, error } = useQuery({
     queryKey: [type],
-    queryFn: () => LanguagesApi.getAll(url),
+    queryFn: () => api.getAll(`${type}/dictionary`),
+    enabled: !!api,
   });
 
+  if (!api || !fieldName)
+    return <div>API або поле не знайдено для "{type}"</div>;
   if (isLoading) return <div>Заватаження</div>;
   if (error) return <div>Помилка!</div>;
 
@@ -16,7 +21,7 @@ function Dictionary({ type, name }) {
       <h2>Довідник: {name}</h2>
       <ul>
         {data.map((item) => (
-          <input key={item.id}>{item.languageName}</input>
+          <input key={item.id} placeholder={item[fieldName]} />
         ))}
       </ul>
     </>
