@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { lazy } from "react";
+import { ToastContainer } from "react-toastify"; // Импортируем ToastContainer
+import "react-toastify/dist/ReactToastify.css"; // Импортируем стили для тостов
 
 const Layout = lazy(() => import("./components/Layout/Layout"));
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -23,6 +25,12 @@ const Dictionaries = lazy(() => import("./pages/Dictionaries/Dicrtionaries"));
 function App() {
   return (
     <div>
+      {/* Глобальный контейнер для тостов */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={true}
+      />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

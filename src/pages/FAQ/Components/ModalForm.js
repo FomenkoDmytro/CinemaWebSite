@@ -1,13 +1,13 @@
 import { Field, Form, Formik } from "formik";
 import styles from "./ModalForm.module.scss";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function ModalForm() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleNavigate = (path) => {
-    navigate(path);
-  };
+  // const handleNavigate = (path) => {
+  //   navigate(path);
+  // };
 
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const phonePattern = /^(?:\+38)?0\d{9}$/;

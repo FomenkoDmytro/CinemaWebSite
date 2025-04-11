@@ -30,3 +30,20 @@
   background-color: transparent;
   color: var(--color-primary-blue);
 }
+
+.buttonDanger {
+  // display: block;
+  padding: 16px 32px;
+  color: var(--color-secondary-white);
+  font-weight: 600;
+  border-radius: 32px;
+  border: 2px solid var(--color-primary-danger);
+  background-color: var(--color-primary-danger);
+  // margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.buttonDanger:hover {
+  background-color: transparent;
+  color: var(--color-primary-danger);
+}

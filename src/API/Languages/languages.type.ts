@@ -8,6 +8,5 @@ export interface CreateLanguageDto {
 }
 
 export interface UpdateLanguageDto {
-  id: number;
   languageName: string;
 }
