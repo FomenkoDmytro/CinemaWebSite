@@ -11,12 +11,12 @@ export const LanguagesApi = {
     return response.data;
   },
 
-  create: async (dto: CreateLanguageDto): Promise<Languages> => {
+  create: async (dto: CreateLanguageDto): Promise<void> => {
     const response = await api.post("Languages", dto);
     return response.data;
   },
 
-  update: async (id: number, dto: CreateLanguageDto): Promise<Languages> => {
+  update: async (id: number, dto: UpdateLanguageDto): Promise<void> => {
     const response = await api.put(`Languages/${id}`, dto);
     return response.data;
   },
