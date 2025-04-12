@@ -1,9 +1,9 @@
 import LanguagesView from "./Languages/LanguagesView";
 
-function DictionaryViewFactory({ type, data, onEdit }) {
+function DictionaryViewFactory({ type, data }) {
   switch (type) {
     case "Languages":
-      return <LanguagesView data={data} onEdit={onEdit} />;
+      return <LanguagesView data={data} />;
     case "Ganres":
       return <div>Ganres</div>;
     default:

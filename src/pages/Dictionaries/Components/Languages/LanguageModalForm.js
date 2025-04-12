@@ -3,6 +3,7 @@ import { Field, Form, Formik } from "formik";
 import styles from "./LanguageModalForm.module.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { LanguagesApi } from "../../../../API/Languages/languages.api.ts";
+import ButtonLoader from "../../../../components/Loader/Button/ButtonLoader.js";
 
 function LanguageModalForm({ data, mode, onHide }) {
   const queryClient = useQueryClient();
@@ -50,11 +51,11 @@ function LanguageModalForm({ data, mode, onHide }) {
     },
   });
 
-  const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = async (values, { resetForm }) => {
     if (data?.id) {
-      updateLanguage.mutate({ id: data.id, values });
+      await updateLanguage.mutateAsync({ id: data.id, values });
     } else {
-      createLanguage.mutate(values);
+      await createLanguage.mutateAsync(values);
     }
     resetForm();
   };
@@ -81,7 +82,7 @@ function LanguageModalForm({ data, mode, onHide }) {
         }}
         onSubmit={handleSubmit}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, isSubmitting }) => (
           <Form className={styles.form}>
             <div>
               <Field
@@ -90,23 +91,35 @@ function LanguageModalForm({ data, mode, onHide }) {
                 name="languageName"
                 placeholder="Введіть назву мови"
                 type="text"
+                disabled={isSubmitting || deleteLanguage.isPending}
               />
               {touched.languageName && errors.languageName && (
                 <div className={styles.error}>{errors.languageName}</div>
               )}
             </div>
 
-            <button type="submit" className="button">
-              {mode === "edit" ? "Оновити" : "Додати"}
+            <button
+              type="submit"
+              className="button"
+              disabled={isSubmitting || deleteLanguage.isPending}
+            >
+              {isSubmitting ? (
+                <ButtonLoader />
+              ) : mode === "edit" ? (
+                "Оновити"
+              ) : (
+                "Додати"
+              )}
             </button>
 
             {mode === "edit" && (
               <button
                 type="button"
                 className="buttonDanger"
-                onClick={() => deleteLanguage.mutate(data.id)}
+                disabled={isSubmitting || deleteLanguage.isPending}
+                onClick={async () => await deleteLanguage.mutateAsync(data.id)}
               >
-                Видалити
+                {deleteLanguage.isPending ? <ButtonLoader /> : "Видалити"}
               </button>
             )}
           </Form>

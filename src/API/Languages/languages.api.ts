@@ -12,6 +12,7 @@ export const LanguagesApi = {
   },
 
   create: async (dto: CreateLanguageDto): Promise<void> => {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
     const response = await api.post("Languages", dto);
     return response.data;
   },
