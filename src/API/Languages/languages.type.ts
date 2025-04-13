@@ -1,12 +1,12 @@
-export interface Languages {
+export interface ILanguages {
   id: number;
   languageName: string;
 }
 
-export interface CreateLanguageDto {
+export interface ICreateLanguageDto {
   languageName: string;
 }
 
-export interface UpdateLanguageDto {
+export interface IUpdateLanguageDto {
   languageName: string;
 }

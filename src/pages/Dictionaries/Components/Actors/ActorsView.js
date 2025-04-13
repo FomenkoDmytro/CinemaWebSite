@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Pagination } from "react-bootstrap";
-import styles from "./LanguagesView.module.scss";
-import LanguageModal from "./LanguageModal";
+import styles from "./ActorsView.module.scss";
+import ActorModal from "./ActorModal";
 import Fuse from "fuse.js";
 
-function LanguagesView({ data }) {
+function ActorsView({ data }) {
   const [modalShow, setModalShow] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [mode, setMode] = useState(null);
@@ -13,16 +13,16 @@ function LanguagesView({ data }) {
   const itemsPerPage = 10;
 
   const fuse = new Fuse(data, {
-    keys: ["languageName"],
+    keys: ["firstName", "lastName"],
     threshold: 0.4,
   });
 
-  const filteredLanguage =
+  const filteredActor =
     search.trim() === ""
       ? data
       : fuse.search(search).map((result) => result.item);
 
-  const paginatedData = filteredLanguage.slice(
+  const paginatedData = filteredActor.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
@@ -43,7 +43,7 @@ function LanguagesView({ data }) {
     setCurrentPage(pageNumber);
   };
 
-  const totalPages = Math.ceil(filteredLanguage.length / itemsPerPage);
+  const totalPages = Math.ceil(filteredActor.length / itemsPerPage);
 
   let items = [];
   for (let number = 1; number <= totalPages; number++) {
@@ -65,20 +65,22 @@ function LanguagesView({ data }) {
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Пошук мови"
+          placeholder="Пошук актора"
           className="input"
         />
       </div>
       <ul className={styles.list}>
-        {paginatedData.map((lang) => (
-          <li key={lang.id}>
-            Назва мови:{" "}
+        {paginatedData.map((act) => (
+          <li key={act.id}>
+            Ім'я:{" "}
             <span className="text-primary-blue text-bold">
-              {lang.languageName}{" "}
+              {act.firstName}{" "}
             </span>
+            Призвище:{" "}
+            <span className="text-primary-blue text-bold">{act.lastName} </span>
             <button
               className="buttonSmall"
-              onClick={() => handleEditClick(lang)}
+              onClick={() => handleEditClick(act)}
             >
               Редагувати
             </button>
@@ -89,10 +91,10 @@ function LanguagesView({ data }) {
       <Pagination className={styles.pagination}>{items}</Pagination>
 
       <button className="button" onClick={() => handleAddClick()}>
-        Додати нову мову до довідника
+        Додати нового актора до довідника
       </button>
 
-      <LanguageModal
+      <ActorModal
         show={modalShow}
         onHide={() => setModalShow(false)}
         data={selectedItem}
@@ -102,4 +104,4 @@ function LanguagesView({ data }) {
   );
 }
 
-export default LanguagesView;
+export default ActorsView;

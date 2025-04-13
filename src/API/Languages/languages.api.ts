@@ -1,23 +1,22 @@
 import api from "../index.ts";
 import {
-  Languages,
-  CreateLanguageDto,
-  UpdateLanguageDto,
+  ILanguages,
+  ICreateLanguageDto,
+  IUpdateLanguageDto,
 } from "./languages.type";
 
 export const LanguagesApi = {
-  getAll: async (url: string): Promise<Languages[]> => {
+  getAll: async (url: string): Promise<ILanguages[]> => {
     const response = await api.get(url);
     return response.data;
   },
 
-  create: async (dto: CreateLanguageDto): Promise<void> => {
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
+  create: async (dto: ICreateLanguageDto): Promise<void> => {
     const response = await api.post("Languages", dto);
     return response.data;
   },
 
-  update: async (id: number, dto: UpdateLanguageDto): Promise<void> => {
+  update: async (id: number, dto: IUpdateLanguageDto): Promise<void> => {
     const response = await api.put(`Languages/${id}`, dto);
     return response.data;
   },
