@@ -23,9 +23,8 @@ function LanguageModalForm({ data, mode, onHide }) {
   });
 
   const updateLanguage = useMutation({
-    mutationFn: ({ id, values }) => LanguagesApi.update(id, values),
+    mutationFn: ({ id, dto }) => LanguagesApi.update(id, dto),
     onSuccess: () => {
-      console.log("Language successfully created");
       queryClient.invalidateQueries(["Languages"]);
       onHide();
       toast.success("Мова успішно оновлена!");
@@ -53,9 +52,11 @@ function LanguageModalForm({ data, mode, onHide }) {
 
   const handleSubmit = async (values, { resetForm }) => {
     if (data?.id) {
-      await updateLanguage.mutateAsync({ id: data.id, values });
+      const updateDto = { languageName: values.languageName };
+      await updateLanguage.mutateAsync({ id: data.id, dto: updateDto });
     } else {
-      await createLanguage.mutateAsync(values);
+      const createDto = { languageName: values.languageName };
+      await createLanguage.mutateAsync(createDto);
     }
     resetForm();
   };
