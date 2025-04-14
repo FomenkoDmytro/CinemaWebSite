@@ -1,51 +1,51 @@
 import { toast } from "react-toastify";
 import { Field, Form, Formik } from "formik";
-import styles from "./ActorModalForm.module.scss";
+import styles from "./ProducerModalForm.module.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ActorsApi } from "../../../../API/Actors/actors.api.ts";
+import { ProducersApi } from "../../../../API/Producers/producers.api.ts";
 import ButtonLoader from "../../../../components/Loader/Button/ButtonLoader.js";
 
-function ActorModalForm({ data, mode, onHide }) {
+function ProducerModalForm({ data, mode, onHide }) {
   const queryClient = useQueryClient();
 
-  const createActor = useMutation({
-    mutationFn: (newActor) => ActorsApi.create(newActor),
+  const createProducer = useMutation({
+    mutationFn: (newProducer) => ProducersApi.create(newProducer),
     onSuccess: () => {
-      queryClient.invalidateQueries(["Actors"]);
+      queryClient.invalidateQueries(["Producers"]);
       onHide();
-      toast.success("Актор успішно доданий!");
+      toast.success("Продюсера успішно додано!");
     },
     onError: (error) => {
       toast.error(
-        `Сталася помилка: ${error.message || "Не вдалося додати актора"}`
+        `Сталася помилка: ${error.message || "Не вдалося додати продюсера"}`
       );
     },
   });
 
-  const updateActor = useMutation({
-    mutationFn: ({ id, dto }) => ActorsApi.update(id, dto),
+  const updateProducer = useMutation({
+    mutationFn: ({ id, dto }) => ProducersApi.update(id, dto),
     onSuccess: () => {
-      queryClient.invalidateQueries(["Actors"]);
+      queryClient.invalidateQueries(["Producers"]);
       onHide();
-      toast.success("Актор успішно оновлений!");
+      toast.success("Продюсера успішно оновлено!");
     },
     onError: (error) => {
       toast.error(
-        `Сталася помилка: ${error.message || "Не вдалося оновити актора"}`
+        `Сталася помилка: ${error.message || "Не вдалося оновити продюсера"}`
       );
     },
   });
 
-  const deleteActor = useMutation({
-    mutationFn: (id) => ActorsApi.remove(id),
+  const deleteProducer = useMutation({
+    mutationFn: (id) => ProducersApi.remove(id),
     onSuccess: () => {
-      queryClient.invalidateQueries(["Actors"]);
+      queryClient.invalidateQueries(["Producers"]);
       onHide();
-      toast.success("Актор успішно видалений!");
+      toast.success("Продюсера успішно видалено!");
     },
     onError: (error) => {
       toast.error(
-        `Сталася помилка: ${error.message || "Не вдалося видалити актора"}`
+        `Сталася помилка: ${error.message || "Не вдалося видалити продюсера"}`
       );
     },
   });
@@ -56,13 +56,13 @@ function ActorModalForm({ data, mode, onHide }) {
         firstName: values.firstName,
         lastName: values.lastName,
       };
-      await updateActor.mutateAsync({ id: data.id, dto: updateDto });
+      await updateProducer.mutateAsync({ id: data.id, dto: updateDto });
     } else {
       const createDto = {
         firstName: values.firstName,
         lastName: values.lastName,
       };
-      await createActor.mutateAsync(createDto);
+      await createProducer.mutateAsync(createDto);
     }
     resetForm();
   };
@@ -78,20 +78,21 @@ function ActorModalForm({ data, mode, onHide }) {
           const errors = {};
 
           if (values.firstName.length < 2) {
-            errors.firstName = "Ім'я актора повинно бути більше одного символа";
+            errors.firstName =
+              "Ім'я продюсера повинно бути більше одного символа";
           }
 
           if (values.firstName.length > 20) {
-            errors.firstName = "Ім'я актора повинно бути до 20 символів";
+            errors.firstName = "Ім'я продюсера повинно бути до 20 символів";
           }
 
           if (values.lastName.length < 2) {
             errors.lastName =
-              "Призвище актора повинно бути більше одного символа";
+              "Призвище продюсера повинно бути більше одного символа";
           }
 
           if (values.lastName.length > 20) {
-            errors.lastName = "Призвище актора повинно бути до 20 символів";
+            errors.lastName = "Призвище продюсера повинно бути до 20 символів";
           }
 
           return errors;
@@ -105,9 +106,9 @@ function ActorModalForm({ data, mode, onHide }) {
                 className="input"
                 id="firstName"
                 name="firstName"
-                placeholder="Введіть і'мя актора"
+                placeholder="Введіть і'мя продюсера"
                 type="text"
-                disabled={isSubmitting || deleteActor.isPending}
+                disabled={isSubmitting || deleteProducer.isPending}
               />
               {touched.firstName && errors.firstName && (
                 <div className={styles.error}>{errors.firstName}</div>
@@ -119,9 +120,9 @@ function ActorModalForm({ data, mode, onHide }) {
                 className="input"
                 id="lastName"
                 name="lastName"
-                placeholder="Введіть призвище актора"
+                placeholder="Введіть призвище продюсера"
                 type="text"
-                disabled={isSubmitting || deleteActor.isPending}
+                disabled={isSubmitting || deleteProducer.isPending}
               />
               {touched.lastName && errors.lastName && (
                 <div className={styles.error}>{errors.lastName}</div>
@@ -131,7 +132,7 @@ function ActorModalForm({ data, mode, onHide }) {
             <button
               type="submit"
               className="button"
-              disabled={isSubmitting || deleteActor.isPending}
+              disabled={isSubmitting || deleteProducer.isPending}
             >
               {isSubmitting ? (
                 <ButtonLoader />
@@ -146,10 +147,10 @@ function ActorModalForm({ data, mode, onHide }) {
               <button
                 type="button"
                 className="buttonDanger"
-                disabled={isSubmitting || deleteActor.isPending}
-                onClick={async () => await deleteActor.mutateAsync(data.id)}
+                disabled={isSubmitting || deleteProducer.isPending}
+                onClick={async () => await deleteProducer.mutateAsync(data.id)}
               >
-                {deleteActor.isPending ? <ButtonLoader /> : "Видалити"}
+                {deleteProducer.isPending ? <ButtonLoader /> : "Видалити"}
               </button>
             )}
           </Form>
@@ -159,4 +160,4 @@ function ActorModalForm({ data, mode, onHide }) {
   );
 }
 
-export default ActorModalForm;
+export default ProducerModalForm;
