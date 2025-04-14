@@ -2,6 +2,7 @@ import ActorsView from "./Actors/ActorsView";
 import ProducersView from "./Producers/ProducersView";
 import GanresView from "./Ganres/GanresView";
 import LanguagesView from "./Languages/LanguagesView";
+import AudiencesView from "./Audiences/AudiencesView";
 
 function DictionaryViewFactory({ type, data }) {
   switch (type) {
@@ -13,6 +14,8 @@ function DictionaryViewFactory({ type, data }) {
       return <GanresView data={data} />;
     case "Producers":
       return <ProducersView data={data} />;
+    case "Audiences":
+      return <AudiencesView data={data} />;
     default:
       return <div>Помилка, компонент {type} не знайдено</div>;
   }
