@@ -1,13 +1,13 @@
-export interface Ganres {
+export interface IGanres {
   id: number;
   name: string;
 }
 
-export interface CreateGanreDto {
+export interface ICreateGanreDto {
   name: string;
 }
 
-export interface UpdateGanreDto {
+export interface IUpdateGanreDto {
   id: number;
   name: string;
 }

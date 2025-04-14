@@ -25,7 +25,6 @@ const Dictionaries = lazy(() => import("./pages/Dictionaries/Dicrtionaries"));
 function App() {
   return (
     <div>
-      {/* Глобальный контейнер для тостов */}
       <ToastContainer
         position="top-right"
         autoClose={3000}

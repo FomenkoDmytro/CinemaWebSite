@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import { Field, Form, Formik } from "formik";
-import styles from "./AtorModalForm.module.scss";
+import styles from "./ActorModalForm.module.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ActorsApi } from "../../../../API/Actors/actors.api.ts";
 import ButtonLoader from "../../../../components/Loader/Button/ButtonLoader.js";
